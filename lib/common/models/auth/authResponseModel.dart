@@ -20,6 +20,8 @@ final String empDsc;
 // final String empCode;
 final int companyId;
 
+
+
   AuthResponseModel(this.empId, this.empDsc,  this.companyId);
 
 factory AuthResponseModel.fromJson(Map<String, dynamic> json) => _$AuthResponseModelFromJson(json);

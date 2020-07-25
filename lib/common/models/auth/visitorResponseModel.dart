@@ -69,26 +69,26 @@ factory VisitorResponseModel.fromJson(Map<String, dynamic> json) => _$VisitorRes
  
  static String create(){
     return "CREATE TABLE $tableName (" +
-      "$columnPurposeId INTEGER PRIMARY KEY ," +
+      "$columnVisitorId INTEGER PRIMARY KEY ," +
       "$columnPersonName TEXT," +
       "$columnPersonCompany INTEGER," +
       "$columnMobileNo TEXT," +
-      "$columnNoOfPerson TEXT," +
+      "$columnNoOfPerson INTEGER," +
       "$columnPurposeRemark TEXT," +
       "$columnVisitPurposeText TEXT," +
-      "$columnPurposeId TEXT," +
+      "$columnPurposeId INTEGER," +
       "$columnPersonToMeet INTEGER," +
       "$columnPrsonId INTEGER," +
-      "$columnIdProof INTEGER," +
-      "$columnIdProof1 INTEGER," +
-      "$columnOtherPhoto INTEGER," +
-      "$columnGatePasstype TEXT," +
+      "$columnIdProof TEXT," +
+      "$columnIdProof1 TEXT," +
+      "$columnOtherPhoto TEXT," +
+      "$columnGatePasstype INTEGER," +
       "$columnTakeMobile TEXT," +
-      "$columnDelStatus TEXT," +
-      "$columnIsUsed TEXT," +
-      "$columnExInt1 TEXT," +
-      "$columnExInt2 TEXT," +
-      "$columnExInt3 TEXT," +
+      "$columnDelStatus INTEGER," +
+      "$columnIsUsed INTEGER," +
+      "$columnExInt1 INTEGER," +
+      "$columnExInt2 INTEGER," +
+      "$columnExInt3 INTEGER," +
       "$columnExVar1 TEXT," +
       "$columnExVar2 TEXT," + 
       "$columnExVar3 TEXT" +
