@@ -35,6 +35,7 @@ class _VisitorMasterState extends State<VisitorMaster> {
   void initState() {
     super.initState();
     addPurposeStore.setupValidations();
+    dropdownValue=widget.purpose ?? "";
     myController.text = widget.desc ?? "";
     myController1.text = widget.heading ?? "";
     myController2.text = widget.remark ?? "";

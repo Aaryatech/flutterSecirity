@@ -112,7 +112,7 @@ class _PurposeUiState extends State<PurposeUi> {
 //}
 
                               } else if (result == "1") {
-                                Navigator.of(context).pop();
+                               // Navigator.of(context).pop();
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (BuildContext context) =>
                                         new VisitorMaster(

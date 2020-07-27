@@ -118,6 +118,7 @@ child: new Column(
                                child: ImageIcon(
      AssetImage("images/remark.png"),
      color: Color(0xFF3A5A98),
+     
 ),
                                // child: new Image.asset('images/remark.png'),
                              // child: new Text('Person Name : ',style: Theme.of(context).textTheme.headline6.copyWith(color:Colors.black)),

@@ -1,5 +1,6 @@
 import 'package:mobx/mobx.dart';
 import 'package:security/common/models/auth/authResponseModel.dart';
+import 'package:security/common/models/auth/purposeResponseModel.dart';
 import 'package:security/local/dao/authdao.dart';
 import 'package:security/local/dao/deletePurposedao.dart';
 import 'package:security/network/repository/authenticationRepo.dart';
@@ -21,8 +22,8 @@ abstract class _DeletePurposeViewModel with Store {
   // @observable
   // int dscNumber;
 
-  // @observable
-  // AuthResponseModel model;
+  @observable
+   List<PurposeResponseModel> model;
 
   @observable
   bool isLoading = false;
@@ -48,7 +49,7 @@ abstract class _DeletePurposeViewModel with Store {
     isLoading = true;
     deletePurDao.getPurpose().then((value) {
       isLoading = false;
-     // model = value;
+      model = value;
     });
   }
 
