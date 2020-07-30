@@ -556,7 +556,7 @@ Padding(
                                print('data not valid');
                              } else {
 
-                                String fileName = tempFile.path.split("/").last;
+                              String fileName = tempFile.path.split("/").last;
                               FormData formData=new FormData.fromMap({
                                 "image" :
                                 await MultipartFile.fromFile(tempFile.path,filename: fileName,contentType: new MediaType('image','png')),

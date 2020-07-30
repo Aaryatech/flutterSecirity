@@ -144,11 +144,11 @@ mixin _$AddVisitorStore on _AddVisitorStore, Store {
       ActionController(name: '_AddVisitorStore');
 
   @override
-  dynamic setVisitorName(String visitname) {
+  dynamic setVisitorName(String vistname) {
     final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
         name: '_AddVisitorStore.setVisitorName');
     try {
-      return super.setVisitorName(visitname);
+      return super.setVisitorName(vistname);
     } finally {
       _$_AddVisitorStoreActionController.endAction(_$actionInfo);
     }
@@ -177,44 +177,44 @@ mixin _$AddVisitorStore on _AddVisitorStore, Store {
   }
 
   @override
-  dynamic setNoOfPerson(String noPerson) {
+  dynamic setNoOfPerson(String noPer) {
     final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
         name: '_AddVisitorStore.setNoOfPerson');
     try {
-      return super.setNoOfPerson(noPerson);
+      return super.setNoOfPerson(noPer);
     } finally {
       _$_AddVisitorStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  dynamic setRemark(String remark) {
+  dynamic setRemark(String rema) {
     final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
         name: '_AddVisitorStore.setRemark');
     try {
-      return super.setRemark(remark);
+      return super.setRemark(rema);
     } finally {
       _$_AddVisitorStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  dynamic setPurpose(String purpose) {
+  dynamic setPurpose(String pur) {
     final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
         name: '_AddVisitorStore.setPurpose');
     try {
-      return super.setPurpose(purpose);
+      return super.setPurpose(pur);
     } finally {
       _$_AddVisitorStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  dynamic setPersonToMeet(String persontoMeet) {
+  dynamic setPersonToMeet(String pertoMeet) {
     final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
         name: '_AddVisitorStore.setPersonToMeet');
     try {
-      return super.setPersonToMeet(persontoMeet);
+      return super.setPersonToMeet(pertoMeet);
     } finally {
       _$_AddVisitorStoreActionController.endAction(_$actionInfo);
     }
@@ -243,77 +243,77 @@ mixin _$AddVisitorStore on _AddVisitorStore, Store {
   }
 
   @override
-  dynamic validateVisitorName(String text) {
+  dynamic validateVisitorName(String visitorName) {
     final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
         name: '_AddVisitorStore.validateVisitorName');
     try {
-      return super.validateVisitorName(text);
+      return super.validateVisitorName(visitorName);
     } finally {
       _$_AddVisitorStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  dynamic validateCompany(String text) {
+  dynamic validateCompany(String company) {
     final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
         name: '_AddVisitorStore.validateCompany');
     try {
-      return super.validateCompany(text);
+      return super.validateCompany(company);
     } finally {
       _$_AddVisitorStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  dynamic validateMob(String text) {
+  dynamic validateMob(String mob) {
     final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
         name: '_AddVisitorStore.validateMob');
     try {
-      return super.validateMob(text);
+      return super.validateMob(mob);
     } finally {
       _$_AddVisitorStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  dynamic validateNoOfPerson(String text) {
+  dynamic validateNoOfPerson(String noPerson) {
     final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
         name: '_AddVisitorStore.validateNoOfPerson');
     try {
-      return super.validateNoOfPerson(text);
+      return super.validateNoOfPerson(noPerson);
     } finally {
       _$_AddVisitorStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  dynamic validateRemark(String text) {
+  dynamic validateRemark(String remark) {
     final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
         name: '_AddVisitorStore.validateRemark');
     try {
-      return super.validateRemark(text);
+      return super.validateRemark(remark);
     } finally {
       _$_AddVisitorStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  dynamic validatePurpose(String text) {
+  dynamic validatePurpose(String pupose) {
     final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
         name: '_AddVisitorStore.validatePurpose');
     try {
-      return super.validatePurpose(text);
+      return super.validatePurpose(pupose);
     } finally {
       _$_AddVisitorStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  dynamic validatePersonToMeet(String text) {
+  dynamic validatePersonToMeet(String personMeet) {
     final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
         name: '_AddVisitorStore.validatePersonToMeet');
     try {
-      return super.validatePersonToMeet(text);
+      return super.validatePersonToMeet(personMeet);
     } finally {
       _$_AddVisitorStoreActionController.endAction(_$actionInfo);
     }

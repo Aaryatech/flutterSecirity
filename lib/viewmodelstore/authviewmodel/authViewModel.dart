@@ -7,13 +7,29 @@ part 'authViewModel.g.dart';
 
 class AuthViewModel = _AuthViewModel with _$AuthViewModel;
 
+
 abstract class _AuthViewModel with Store {
+  final FormErrorState error = FormErrorState();
   AuthenticationRepo authrepository;
   AuthDao authDao;
 
   _AuthViewModel() {
     authrepository = AuthenticationRepo();
     authDao = AuthDao();
+  }
+ List<ReactionDisposer> _disposers;
+
+  void setupValidations() {
+    _disposers = [
+      reaction((_) => dscNumber, validateDsc)
+  
+    ];
+  }
+
+  void dispose() {
+    for (final d in _disposers) {
+      d();
+    }
   }
 
   @observable
@@ -25,11 +41,16 @@ abstract class _AuthViewModel with Store {
   @observable
   bool isLoading = false;
 
+  @observable
+  bool isAlert = false;
+
   @action
   authUser(String dscNumber) {
     isLoading = true;
+    isAlert=true;
     authrepository.authenticateUser(dscNumber).then((response) {
       isLoading = false;
+       isAlert=false;
       authDao.insertAuthDetails(response.data).then((value) {
         fetchFromLocal();
       });
@@ -49,4 +70,30 @@ abstract class _AuthViewModel with Store {
   setDscNumber(String dsceNumber) {
     dscNumber = dsceNumber;
   }
+
+   @action
+  validateDsc(String text) {
+    text.isEmpty
+        ? error.dscError = 'Please Enter DSC Number'
+        : error.dscError = null;
+  }
+
+
+void validateAll() {
+    validateDsc(dscNumber);
+    
+  }
+
+
+}
+
+class FormErrorState = _FormErrorState with _$FormErrorState;
+
+abstract class _FormErrorState with Store {
+  @observable
+  String dscError = '';
+
+  @computed
+  bool get hasErrors =>
+      dscError != null ;
 }

@@ -18,7 +18,6 @@ abstract class _AddVisitorStore with Store {
 
   _AddVisitorStore() {
     addVisitorRepo = AddVisitorRepo();
-    
     visitorDao = VisitorDao();
   }
 
@@ -74,8 +73,8 @@ abstract class _AddVisitorStore with Store {
 
 
   @action
-  setVisitorName(String visitname) {
-    visitorName = visitname;
+  setVisitorName(String vistname) {
+    visitorName = vistname;
   }
 
   @action
@@ -89,23 +88,23 @@ abstract class _AddVisitorStore with Store {
   }
 
   @action
-  setNoOfPerson(String noPerson) {
-    noOfPerson = noPerson;
+  setNoOfPerson(String noPer) {
+    noOfPerson = noPer;
   }
 
   @action
-  setRemark(String remark) {
-    remark = remark;
+  setRemark(String rema) {
+    remark = rema;
   }
 
   @action
-  setPurpose(String purpose) {
-    purpose = purpose;
+  setPurpose(String pur) {
+    purpose = pur;
   }
 
   @action
-  setPersonToMeet(String persontoMeet) {
-    personToMeet = persontoMeet;
+  setPersonToMeet(String pertoMeet) {
+    personToMeet = pertoMeet;
   }
 
   @action
@@ -141,52 +140,52 @@ abstract class _AddVisitorStore with Store {
   }
 
   @action
-  validateVisitorName(String text) {
-    text.isEmpty
+  validateVisitorName(String visitorName) {
+    visitorName.isEmpty
         ? error.visitorNameError = 'Please Enter Visitor Name'
         : error.visitorNameError = null;
   }
 
   @action
-  validateCompany(String text) {
-    text.isEmpty
+  validateCompany(String company) {
+    company.isEmpty
         ? error.companyError = 'Please Select Company'
         : error.companyError = null;
   }
 
   @action
-  validateMob(String text) {
-    text.isEmpty
+  validateMob(String mob) {
+    mob.isEmpty
         ? error.mobError = 'Please Enter Mob No'
         : error.mobError = null;
   }
 
   @action
-  validateNoOfPerson(String text) {
-    text.isEmpty
+  validateNoOfPerson(String noPerson) {
+    noPerson.isEmpty
         ? error.noOfPersonkError = 'Please Enter No Of Person'
         : error.noOfPersonkError = null;
   }
 
   @action
-  validateRemark(String text) {
-    text.isEmpty
+  validateRemark(String remark) {
+    remark.isEmpty
         ? error.remarkError = 'Please Enter Remark'
         : error.remarkError = null;
   }
 
   @action
-  validatePurpose(String text) {
-    text.isEmpty
-        ? error.noOfPersonkError = 'Please Select Purpose'
-        : error.noOfPersonkError = null;
+  validatePurpose(String pupose) {
+    pupose.isEmpty
+        ? error.purposeError = 'Please Select Purpose'
+        : error.purposeError = null;
   }
 
   @action
-  validatePersonToMeet(String text) {
-    text.isEmpty
-        ? error.noOfPersonkError = 'Please Select Person to Meet'
-        : error.noOfPersonkError = null;
+  validatePersonToMeet(String personMeet) {
+    personMeet.isEmpty
+        ? error.persontoMeetError = 'Please Select Person to Meet'
+        : error.persontoMeetError = null;
   }
 
   void validateAll() {

@@ -108,7 +108,11 @@ new ListTile(
           new Divider(),
            new ListTile(
             title:new Text("Logout"),
-            trailing :new Icon(Icons.arrow_left)
+            trailing :new Icon(Icons.arrow_right),
+             onTap: () { 
+               Navigator.of(context).pop();
+               Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>new AuthUi()));
+              },
           ),
 
         ],
@@ -622,9 +626,6 @@ new Padding(
                          ],
                       ),
 
-
-
-                      
                     ),
                   ),
 

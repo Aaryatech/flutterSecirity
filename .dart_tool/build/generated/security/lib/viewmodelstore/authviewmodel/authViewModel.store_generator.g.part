@@ -50,6 +50,21 @@ mixin _$AuthViewModel on _AuthViewModel, Store {
     });
   }
 
+  final _$isAlertAtom = Atom(name: '_AuthViewModel.isAlert');
+
+  @override
+  bool get isAlert {
+    _$isAlertAtom.reportRead();
+    return super.isAlert;
+  }
+
+  @override
+  set isAlert(bool value) {
+    _$isAlertAtom.reportWrite(value, super.isAlert, () {
+      super.isAlert = value;
+    });
+  }
+
   final _$_AuthViewModelActionController =
       ActionController(name: '_AuthViewModel');
 
@@ -87,11 +102,56 @@ mixin _$AuthViewModel on _AuthViewModel, Store {
   }
 
   @override
+  dynamic validateDsc(String text) {
+    final _$actionInfo = _$_AuthViewModelActionController.startAction(
+        name: '_AuthViewModel.validateDsc');
+    try {
+      return super.validateDsc(text);
+    } finally {
+      _$_AuthViewModelActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 dscNumber: ${dscNumber},
 model: ${model},
-isLoading: ${isLoading}
+isLoading: ${isLoading},
+isAlert: ${isAlert}
+    ''';
+  }
+}
+
+mixin _$FormErrorState on _FormErrorState, Store {
+  Computed<bool> _$hasErrorsComputed;
+
+  @override
+  bool get hasErrors =>
+      (_$hasErrorsComputed ??= Computed<bool>(() => super.hasErrors,
+              name: '_FormErrorState.hasErrors'))
+          .value;
+
+  final _$dscErrorAtom = Atom(name: '_FormErrorState.dscError');
+
+  @override
+  String get dscError {
+    _$dscErrorAtom.reportRead();
+    return super.dscError;
+  }
+
+  @override
+  set dscError(String value) {
+    _$dscErrorAtom.reportWrite(value, super.dscError, () {
+      super.dscError = value;
+    });
+  }
+
+  @override
+  String toString() {
+    return '''
+dscError: ${dscError},
+hasErrors: ${hasErrors}
     ''';
   }
 }
