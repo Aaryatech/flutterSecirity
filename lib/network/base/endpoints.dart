@@ -20,6 +20,8 @@ class Company{
 
 class Visitor{
  final getVisitor='getVisitorList';
+ final saveVisitor='saveVisitor';
+ final deleteVisitor='deleteVistor';
 }
 
 

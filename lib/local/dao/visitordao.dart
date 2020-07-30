@@ -26,6 +26,13 @@ for(int i=0;i<model.length;i++)
 }
 
 
+Future<int> deleteVisitorDetails(int visitorId) async {
+    int result = await _database.delete(VisitorResponseModel.tableName,
+        where: '${VisitorResponseModel.columnVisitorId} = ?',
+        whereArgs: [visitorId]);
+    return result;
+  }
+
 Future<List<VisitorResponseModel>> getVisitor() async {
 
   final List<Map<String, dynamic>> maps = await _database.query(VisitorResponseModel.tableName);

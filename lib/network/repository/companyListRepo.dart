@@ -3,6 +3,7 @@
 import 'package:dio/dio.dart';
 import 'package:security/common/models/auth/authResponseModel.dart';
 import 'package:security/common/models/auth/purposeResponseModel.dart';
+import 'package:security/common/models/companyResponseModel.dart';
 import 'package:security/network/base/endpoints.dart' as endPoints;
 import 'package:security/network/client/networkclient.dart';
 import 'package:security/network/model/httpresponce.dart';
@@ -27,7 +28,7 @@ CompanyListRepo(){
      if(responce.statusCode==200){
        httpResponse.status=responce.statusCode;
        httpResponse.message='Successful';
-       httpResponse.data=AuthResponseModelMaster().fromMapList(responce.data);
+       httpResponse.data=CompanyResponseModelMaster().fromMapList(responce.data);
      
      }else{
        httpResponse.status= 500;
@@ -35,8 +36,7 @@ CompanyListRepo(){
        httpResponse.data=null;
      
      }
-   
-
+  
    }).catchError((onError){
        httpResponse.status= 400;
        httpResponse.message='Network not available';

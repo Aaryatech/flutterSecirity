@@ -69,7 +69,7 @@ factory CompanyResponseModel.fromJson(Map<String, dynamic> json) => _$CompanyRes
  
 }
 
-class AuthResponseModelMaster{
+class CompanyResponseModelMaster{
   List<CompanyResponseModel> autheResponse;
 
   // AuthResponseModelMaster(

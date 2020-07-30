@@ -115,12 +115,851 @@ new ListTile(
         ),
         ),
   
-      body: new Container(
-        child: new Center(
-          child : new Text("Home Page"),
+      body: SingleChildScrollView(
+              child: new Column(
+    
+        children: <Widget>[
+
+//Container(
+   //color: Colors.pink,
+   // height: 50.0,
+  Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+
+                                 Container(
+          color: Colors.pink[800],
+          width: double.maxFinite,
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(vertical: 16),
+          child: Text(
+            "Visitor Count : ",
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
         ),
-      
+  
+                              ],
+  
+                            ),
+//),
+
+              new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Total Visitors',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+
+
+new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Currently Visitors in Company',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,),
+              textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+
+
+                      
+                    ),
+                  ),
+
+
+                  ],
+               ),
+         
+
+          new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Visitors Metting Completed',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+
+
+new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Visitors Rejected',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+
+
+                      
+                    ),
+                  ),
+
+
+                  ],
+               ),
+
+
+
+                 new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Visitors Standing at Gate',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+
+
+new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Current Metting Going on(Approve)',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+
+
+                      
+                    ),
+                  ),
+
+
+                  ],
+               ),
+
+
+                Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+
+                                 Container(
+          color: Colors.pink[800],
+          width: double.maxFinite,
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(vertical: 16),
+          child: Text(
+            "Employee Wise Visitor Count :",
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
+        ),
+  
+                              ],
+  
+                            ),
+
+
+ new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Employee Total Visitor',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+
+
+new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Current Employee Metting Going on(Approve)',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+
+
+                      
+                    ),
+                  ),
+
+
+                  ],
+               ),
+
+
+ new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Employee Wise Rejected',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+
+
+new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Employee Wise Visitor Standing at Gate',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+
+
+                      
+                    ),
+                  ),
+
+
+                  ],
+               ),
+
+
+ new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Employee Wise Meeting Completed',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+
+
+                  ],
+               ),
+
+
+
+  Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+
+                                 Container(
+          color: Colors.pink[800],
+          width: double.maxFinite,
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(vertical: 16),
+          child: Text(
+            "Maintenance Visitors Count :",
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
+        ),
+  
+                              ],
+  
+                            ),
+
+
+ new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Maintenance Visitor Pending',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+
+
+new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Maintenance visitors Approve',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+
+
+                      
+                    ),
+                  ),
+
+
+                  ],
+               ),
+
+
+ new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Maintenance visitors Rejected',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+
+
+new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Maintenance visitors Work Completed',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+
+
+                      
+                    ),
+                  ),
+
+
+                  ],
+               ),
+
+
+ new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Maintenance visitors Total',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+
+
+                  ],
+               ),
+
+
+Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+
+                                 Container(
+          color: Colors.pink[800],
+          width: double.maxFinite,
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(vertical: 16),
+          child: Text(
+            "Employee Gate Pass Count :",
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
+        ),
+  
+                              ],
+  
+                            ),
+
+
+ new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Total Temp GP',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+
+
+new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Total Day GP',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+
+
+                      
+                    ),
+                  ),
+
+
+                  ],
+               ),
+
+
+ new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('No Of Employee Outside Factory',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+                  ],
+ ),
+
+
+Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+
+                                 Container(
+          color: Colors.pink[800],
+          width: double.maxFinite,
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(vertical: 16),
+          child: Text(
+            "Material Inward Count :",
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
+        ),
+  
+                              ],
+  
+                            ),
+
+
+ new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Total No of Inward',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+
+
+new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Total No of Parcel ',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+                    ),
+                  ),
+                  ],
+               ),
+
+Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+
+                                 Container(
+          color: Colors.pink[800],
+          width: double.maxFinite,
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(vertical: 16),
+          child: Text(
+            "Employee Wise Material Gate Pass Count :",
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
+        ),
+  
+                              ],
+  
+                            ),
+
+
+ new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Employee Wise Total Pending',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+
+
+new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Employee Wise Total Approve',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+
+
+                      
+                    ),
+                  ),
+
+
+                  ],
+               ),
+
+
+ new Row(
+                  children: <Widget>[
+                              new Padding(
+                      padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.deepPurple,
+                      child: Row(
+                         children: <Widget>[
+                                             new Container(
+                          width: 170.0,
+                          height: 170.0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text('Employee Wise Total Rejected',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
+                              
+                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            ],
+                          ),
+                        ),
+                         ],
+                      ),
+
+                    ),
+                  ),
+                  ],
+ ),
+
+
+
+         
+        ],
     ),
+      ),
     );
   }
 }

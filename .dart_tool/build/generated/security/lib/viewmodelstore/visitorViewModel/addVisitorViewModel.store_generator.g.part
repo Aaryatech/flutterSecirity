@@ -1,0 +1,466 @@
+// **************************************************************************
+// StoreGenerator
+// **************************************************************************
+
+// ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+
+mixin _$AddVisitorStore on _AddVisitorStore, Store {
+  final _$visitorNameAtom = Atom(name: '_AddVisitorStore.visitorName');
+
+  @override
+  String get visitorName {
+    _$visitorNameAtom.reportRead();
+    return super.visitorName;
+  }
+
+  @override
+  set visitorName(String value) {
+    _$visitorNameAtom.reportWrite(value, super.visitorName, () {
+      super.visitorName = value;
+    });
+  }
+
+  final _$companyAtom = Atom(name: '_AddVisitorStore.company');
+
+  @override
+  String get company {
+    _$companyAtom.reportRead();
+    return super.company;
+  }
+
+  @override
+  set company(String value) {
+    _$companyAtom.reportWrite(value, super.company, () {
+      super.company = value;
+    });
+  }
+
+  final _$mobNoAtom = Atom(name: '_AddVisitorStore.mobNo');
+
+  @override
+  String get mobNo {
+    _$mobNoAtom.reportRead();
+    return super.mobNo;
+  }
+
+  @override
+  set mobNo(String value) {
+    _$mobNoAtom.reportWrite(value, super.mobNo, () {
+      super.mobNo = value;
+    });
+  }
+
+  final _$noOfPersonAtom = Atom(name: '_AddVisitorStore.noOfPerson');
+
+  @override
+  String get noOfPerson {
+    _$noOfPersonAtom.reportRead();
+    return super.noOfPerson;
+  }
+
+  @override
+  set noOfPerson(String value) {
+    _$noOfPersonAtom.reportWrite(value, super.noOfPerson, () {
+      super.noOfPerson = value;
+    });
+  }
+
+  final _$remarkAtom = Atom(name: '_AddVisitorStore.remark');
+
+  @override
+  String get remark {
+    _$remarkAtom.reportRead();
+    return super.remark;
+  }
+
+  @override
+  set remark(String value) {
+    _$remarkAtom.reportWrite(value, super.remark, () {
+      super.remark = value;
+    });
+  }
+
+  final _$purposeAtom = Atom(name: '_AddVisitorStore.purpose');
+
+  @override
+  String get purpose {
+    _$purposeAtom.reportRead();
+    return super.purpose;
+  }
+
+  @override
+  set purpose(String value) {
+    _$purposeAtom.reportWrite(value, super.purpose, () {
+      super.purpose = value;
+    });
+  }
+
+  final _$personToMeetAtom = Atom(name: '_AddVisitorStore.personToMeet');
+
+  @override
+  String get personToMeet {
+    _$personToMeetAtom.reportRead();
+    return super.personToMeet;
+  }
+
+  @override
+  set personToMeet(String value) {
+    _$personToMeetAtom.reportWrite(value, super.personToMeet, () {
+      super.personToMeet = value;
+    });
+  }
+
+  final _$isLoadingAtom = Atom(name: '_AddVisitorStore.isLoading');
+
+  @override
+  bool get isLoading {
+    _$isLoadingAtom.reportRead();
+    return super.isLoading;
+  }
+
+  @override
+  set isLoading(bool value) {
+    _$isLoadingAtom.reportWrite(value, super.isLoading, () {
+      super.isLoading = value;
+    });
+  }
+
+  final _$isAlertAtom = Atom(name: '_AddVisitorStore.isAlert');
+
+  @override
+  bool get isAlert {
+    _$isAlertAtom.reportRead();
+    return super.isAlert;
+  }
+
+  @override
+  set isAlert(bool value) {
+    _$isAlertAtom.reportWrite(value, super.isAlert, () {
+      super.isAlert = value;
+    });
+  }
+
+  final _$_AddVisitorStoreActionController =
+      ActionController(name: '_AddVisitorStore');
+
+  @override
+  dynamic setVisitorName(String visitname) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.setVisitorName');
+    try {
+      return super.setVisitorName(visitname);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic setCompany(String comp) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.setCompany');
+    try {
+      return super.setCompany(comp);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic setMob(String mob) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.setMob');
+    try {
+      return super.setMob(mob);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic setNoOfPerson(String noPerson) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.setNoOfPerson');
+    try {
+      return super.setNoOfPerson(noPerson);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic setRemark(String remark) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.setRemark');
+    try {
+      return super.setRemark(remark);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic setPurpose(String purpose) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.setPurpose');
+    try {
+      return super.setPurpose(purpose);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic setPersonToMeet(String persontoMeet) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.setPersonToMeet');
+    try {
+      return super.setPersonToMeet(persontoMeet);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic buttonClick(VisitorResponseModel visitorResponseModel) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.buttonClick');
+    try {
+      return super.buttonClick(visitorResponseModel);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic fetchFromLocal() {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.fetchFromLocal');
+    try {
+      return super.fetchFromLocal();
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic validateVisitorName(String text) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.validateVisitorName');
+    try {
+      return super.validateVisitorName(text);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic validateCompany(String text) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.validateCompany');
+    try {
+      return super.validateCompany(text);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic validateMob(String text) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.validateMob');
+    try {
+      return super.validateMob(text);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic validateNoOfPerson(String text) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.validateNoOfPerson');
+    try {
+      return super.validateNoOfPerson(text);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic validateRemark(String text) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.validateRemark');
+    try {
+      return super.validateRemark(text);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic validatePurpose(String text) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.validatePurpose');
+    try {
+      return super.validatePurpose(text);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic validatePersonToMeet(String text) {
+    final _$actionInfo = _$_AddVisitorStoreActionController.startAction(
+        name: '_AddVisitorStore.validatePersonToMeet');
+    try {
+      return super.validatePersonToMeet(text);
+    } finally {
+      _$_AddVisitorStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  String toString() {
+    return '''
+visitorName: ${visitorName},
+company: ${company},
+mobNo: ${mobNo},
+noOfPerson: ${noOfPerson},
+remark: ${remark},
+purpose: ${purpose},
+personToMeet: ${personToMeet},
+isLoading: ${isLoading},
+isAlert: ${isAlert}
+    ''';
+  }
+}
+
+mixin _$FormErrorState on _FormErrorState, Store {
+  Computed<bool> _$hasErrorsComputed;
+
+  @override
+  bool get hasErrors =>
+      (_$hasErrorsComputed ??= Computed<bool>(() => super.hasErrors,
+              name: '_FormErrorState.hasErrors'))
+          .value;
+
+  final _$visitorNameErrorAtom = Atom(name: '_FormErrorState.visitorNameError');
+
+  @override
+  String get visitorNameError {
+    _$visitorNameErrorAtom.reportRead();
+    return super.visitorNameError;
+  }
+
+  @override
+  set visitorNameError(String value) {
+    _$visitorNameErrorAtom.reportWrite(value, super.visitorNameError, () {
+      super.visitorNameError = value;
+    });
+  }
+
+  final _$companyErrorAtom = Atom(name: '_FormErrorState.companyError');
+
+  @override
+  String get companyError {
+    _$companyErrorAtom.reportRead();
+    return super.companyError;
+  }
+
+  @override
+  set companyError(String value) {
+    _$companyErrorAtom.reportWrite(value, super.companyError, () {
+      super.companyError = value;
+    });
+  }
+
+  final _$mobErrorAtom = Atom(name: '_FormErrorState.mobError');
+
+  @override
+  String get mobError {
+    _$mobErrorAtom.reportRead();
+    return super.mobError;
+  }
+
+  @override
+  set mobError(String value) {
+    _$mobErrorAtom.reportWrite(value, super.mobError, () {
+      super.mobError = value;
+    });
+  }
+
+  final _$noOfPersonkErrorAtom = Atom(name: '_FormErrorState.noOfPersonkError');
+
+  @override
+  String get noOfPersonkError {
+    _$noOfPersonkErrorAtom.reportRead();
+    return super.noOfPersonkError;
+  }
+
+  @override
+  set noOfPersonkError(String value) {
+    _$noOfPersonkErrorAtom.reportWrite(value, super.noOfPersonkError, () {
+      super.noOfPersonkError = value;
+    });
+  }
+
+  final _$remarkErrorAtom = Atom(name: '_FormErrorState.remarkError');
+
+  @override
+  String get remarkError {
+    _$remarkErrorAtom.reportRead();
+    return super.remarkError;
+  }
+
+  @override
+  set remarkError(String value) {
+    _$remarkErrorAtom.reportWrite(value, super.remarkError, () {
+      super.remarkError = value;
+    });
+  }
+
+  final _$purposeErrorAtom = Atom(name: '_FormErrorState.purposeError');
+
+  @override
+  String get purposeError {
+    _$purposeErrorAtom.reportRead();
+    return super.purposeError;
+  }
+
+  @override
+  set purposeError(String value) {
+    _$purposeErrorAtom.reportWrite(value, super.purposeError, () {
+      super.purposeError = value;
+    });
+  }
+
+  final _$persontoMeetErrorAtom =
+      Atom(name: '_FormErrorState.persontoMeetError');
+
+  @override
+  String get persontoMeetError {
+    _$persontoMeetErrorAtom.reportRead();
+    return super.persontoMeetError;
+  }
+
+  @override
+  set persontoMeetError(String value) {
+    _$persontoMeetErrorAtom.reportWrite(value, super.persontoMeetError, () {
+      super.persontoMeetError = value;
+    });
+  }
+
+  @override
+  String toString() {
+    return '''
+visitorNameError: ${visitorNameError},
+companyError: ${companyError},
+mobError: ${mobError},
+noOfPersonkError: ${noOfPersonkError},
+remarkError: ${remarkError},
+purposeError: ${purposeError},
+persontoMeetError: ${persontoMeetError},
+hasErrors: ${hasErrors}
+    ''';
+  }
+}

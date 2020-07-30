@@ -143,11 +143,11 @@ mixin _$AddPurposeStore on _AddPurposeStore, Store {
   }
 
   @override
-  dynamic buttonClick() {
+  dynamic buttonClick(PurposeResponseModel purposeResponseModel) {
     final _$actionInfo = _$_AddPurposeStoreActionController.startAction(
         name: '_AddPurposeStore.buttonClick');
     try {
-      return super.buttonClick();
+      return super.buttonClick(purposeResponseModel);
     } finally {
       _$_AddPurposeStoreActionController.endAction(_$actionInfo);
     }

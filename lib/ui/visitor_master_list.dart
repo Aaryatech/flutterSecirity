@@ -57,7 +57,93 @@ child: new Column(
                                padding: new EdgeInsets.all(7.0),
                                child: new Text( '${visitorViewModelStore.model[index].personName}',style: new TextStyle(fontSize: 18.0),),
                              ),
-                             
+
+                                PopupMenuButton<String>(
+                            onSelected: (String result) {
+                              print(result);
+
+                              if (result == "2") {
+                                //  showAlertDialog(BuildContext context) {
+
+                                // set up the buttons
+                                Widget cancelButton = FlatButton(
+                                  child: Text("Cancel"),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                );
+                                Widget continueButton = FlatButton(
+                                  child: Text("Continue"),
+                                  onPressed: () {
+                                    Observer(builder: (_) {
+                                      return visitorViewModelStore.isLoading
+                                          ? Center(
+                                              child:
+                                                  CircularProgressIndicator(),
+                                            )
+                                          : Container();
+                                    });
+
+                                    visitorViewModelStore.deleteVisitor(
+                                        visitorViewModelStore
+                                            .model[index].visitorId);
+
+                                    visitorViewModelStore.fetchFromLocal();
+                                    Navigator.pop(context);
+                                  },
+                                );
+
+                                // set up the AlertDialog
+                                AlertDialog alert = AlertDialog(
+                                  title: Text("AlertDialog"),
+                                  content:
+                                      Text("Would you like to delete Visitor?"),
+                                  actions: [
+                                    cancelButton,
+                                    continueButton,
+                                  ],
+                                );
+
+                                // show the dialog
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return alert;
+                                  },
+                                );
+//}
+
+                              } else if (result == "1") {
+                               // Navigator.of(context).pop();
+                                // Navigator.of(context).push(MaterialPageRoute(
+                                //     builder: (BuildContext context) =>
+                                //         new VisitorMaster(
+                                //           purposeId: purposeViewModelStore
+                                //               .model[index].purposeId,
+                                //           desc: purposeViewModelStore
+                                //               .model[index].description,
+                                //           heading: purposeViewModelStore
+                                //               .model[index].purposeHeading,
+                                //           remark: purposeViewModelStore
+                                //               .model[index].remark,
+                                //           purpose: purposeViewModelStore
+                                //               .model[index].exVar1,
+                                //               isEdit:true
+                                //         )));
+                              }
+                            },
+                            itemBuilder: (BuildContext context) =>
+                                <PopupMenuEntry<String>>[
+                              const PopupMenuItem<String>(
+                                value: "1",
+                                child: Text('Edit'),
+                              ),
+                              const PopupMenuItem<String>(
+                                value: "2",
+                                child: Text('Delete'),
+                              ),
+                            ],
+                          ),
                           
 
                             ],

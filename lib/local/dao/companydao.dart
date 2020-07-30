@@ -20,7 +20,7 @@ final batch = _database.batch();
 //List<dynamic> results;
 for(int i=0;i<model.length;i++)
 {
- batch.insert(PurposeResponseModel.tableName,model[i].toJson(),conflictAlgorithm: ConflictAlgorithm.replace);
+ batch.insert(CompanyResponseModel.tableName,model[i].toJson(),conflictAlgorithm: ConflictAlgorithm.replace);
 }
  return await batch.commit();
 }

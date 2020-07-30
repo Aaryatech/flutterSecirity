@@ -53,6 +53,8 @@ abstract class _AddPurposeStore with Store {
 
   // @observable
   // PurposeResponseModel model;
+
+  
   @action
   setPurpose(String purpo) {
     purpose = purpo;
@@ -74,12 +76,15 @@ abstract class _AddPurposeStore with Store {
   }
 
   @action
-  buttonClick() {
+  buttonClick(PurposeResponseModel purposeResponseModel) {
     isLoading = true;
     isAlert=true;
-    addrepository
-        .addPurpose(PurposeResponseModel(0, purposeHeading, 1, desc, remark,
-            "0", "NA", "NA", 1, 1, 0, 0, 0, purpose, null, null))
+    // addrepository
+    //     .addPurpose(PurposeResponseModel(0, purposeHeading, 1, desc, remark,
+    //         "0", "NA", "NA", 1, 1, 0, 0, 0, purpose, null, null))
+    //     .then((response) {
+       addrepository
+        .addPurpose(purposeResponseModel)
         .then((response) {
       isLoading = false;
        isAlert=false;

@@ -1,10 +1,18 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:http_parser/http_parser.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:security/common/models/companyResponseModel.dart';
 import 'package:security/viewmodelstore/companyViewModel/companyViewModel.dart';
+import 'package:security/viewmodelstore/visitorViewModel/addVisitorViewModel.dart';
 
 CompanyViewModel companyViewModel = CompanyViewModel();
+final AddVisitorStore addVisitorStore = AddVisitorStore();
 class VisitorMasterUi  extends StatefulWidget {
   @override
   _VisitorMasterUiState createState() => _VisitorMasterUiState();
@@ -30,17 +38,63 @@ class _VisitorMasterUiState extends State<VisitorMasterUi > {
   ];
 
  List<CompanyResponseModel> _company = [];
+ Future<File> file;
+  File tempFile;
+  String errorMsg ="Error uploading image";
+  String base64Image;
+   Dio dio=new Dio();
  
    void initState() {
  
      companyViewModel.insertFromLocal();
     _company=companyViewModel.model;
-     // for(int i=0;i<companyViewModel.model.length;i++)
-     // {
-     //   _company.add(companyViewModel.model[i].companyName);
-     // }
+    addVisitorStore.setupValidations();
+     
      super.initState();
    }
+ 
+
+ chooseImage(){
+   setState(() {
+   var imagePicker=ImagePicker.pickImage(source: ImageSource.gallery);
+   if(imagePicker!=null)
+   {
+     setState(() {
+         file=imagePicker;
+     });
+   
+   }
+   });
+
+ }
+
+ Widget showImage(){
+   return FutureBuilder<File>(
+     future: file,builder: (BuildContext context,AsyncSnapshot<File> snapshot){
+       if(snapshot.connectionState==ConnectionState.done && null !=snapshot.data)
+       {
+         tempFile=snapshot.data;
+          base64Image = base64Encode(snapshot.data.readAsBytesSync());
+         return Flexible(
+           child: Image.file(
+             snapshot.data,
+             fit: BoxFit.fill,
+             ),
+         
+         );
+       }else if(null !=snapshot.error)
+       {
+         return const Text('Error picking image',
+         textAlign: TextAlign.center,
+         );
+       }else{
+         return const Text('No image selected',
+          textAlign:TextAlign.center,
+         );
+       }
+     },
+   );
+ }
  
  
    @override
@@ -81,7 +135,7 @@ class _VisitorMasterUiState extends State<VisitorMasterUi > {
                            decoration: InputDecoration(
                              labelText: 'Visitor Name',
                              hintText: 'Visitor Name',
-                             //errorText: addPurposeStore.error.purposeHeadingError,
+                             errorText: addVisitorStore.error.visitorNameError,
  
                              border: OutlineInputBorder(
                                borderRadius: BorderRadius.circular(25.0),
@@ -146,7 +200,7 @@ class _VisitorMasterUiState extends State<VisitorMasterUi > {
                                    errorStyle: TextStyle(
                                        color: Colors.deepPurple, fontSize: 16.0),
                                    hintText: 'Select Company',
-                                  // errorText: addPurposeStore.error.purposError,
+                                  errorText: addVisitorStore.error.companyError,
                                    border: OutlineInputBorder(
                                        borderRadius: BorderRadius.circular(25.0))),
                                isEmpty: dropdownValue == '',
@@ -443,7 +497,42 @@ Padding(
   
           ),
 ),
-     
+
+Padding(
+  padding: const EdgeInsets.all(8.0),
+  child:   Row(
+  
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+   new Padding(
+                               padding: new EdgeInsets.all(7.0),
+                               //child: new Icon(Icons.phone),
+                               child: IconButton(
+              icon: Icon(Icons.camera),
+              onPressed: () {
+                chooseImage();
+               
+              },
+            ),
+                               
+                               
+                             // child: new Text('Person Name : ',style: Theme.of(context).textTheme.headline6.copyWith(color:Colors.black)),
+                             ),
+             
+    SizedBox(
+                       width: 60,
+                     ),
+                    showImage(),
+
+                    SizedBox(
+                       width: 30,
+                     ),
+  
+            
+  ],
+  
+          ),
+),
 
                      
                      SizedBox(
@@ -460,49 +549,29 @@ Padding(
                              shape: RoundedRectangleBorder(
                                  borderRadius: BorderRadius.circular(30.0),
                                  side: BorderSide(color: Colors.deepPurple)),
-                             onPressed: () {
- //                             //addPurposeStore.validateAll();
- //                             if (addPurposeStore.error.hasErrors) {
- //                               print('data not valid');
- //                             } else {
- //                               addPurposeStore.buttonClick();
- 
- //                               if(addPurposeStore.isAlert)
- //                               {
- 
- //  Widget okButton = FlatButton(  
- //     child: Text("OK"),  
- //     onPressed: () {  
- //       //Navigator.of(context).pop();  
- //        Navigator.of(context).pop();
- //               Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>new PurposeUi()));
- //     },  
- //   );  
-   
- //   // Create AlertDialog  
- //   AlertDialog alert = AlertDialog(  
- //     title: Text("AlertDialog"),  
- //     content: Text("Successfully Submit Purpose"),  
- //     actions: [  
- //       okButton,  
- //     ],  
- //   );  
-   
- //   // show the dialog  
- //   showDialog(  
- //     context: context,  
- //     builder: (BuildContext context) {  
- //       return alert;  
- //     },  
- //   );  
- 
- 
- //                               }
+                             onPressed: ()async {
                                
-                           
+                              addVisitorStore.validateAll();
+                             if (addVisitorStore.error.hasErrors) {
+                               print('data not valid');
+                             } else {
+
+                                String fileName = tempFile.path.split("/").last;
+                              FormData formData=new FormData.fromMap({
+                                "image" :
+                                await MultipartFile.fromFile(tempFile.path,filename: fileName,contentType: new MediaType('image','png')),
+                                "type":"image/png"
+
+                              });
+                              Response response=await dio.post("http://107.180.95.11:8080/SecurityAppApiDemo/photoUpload",data:formData,options: Options(
+                                headers:{ 
+                                "accept":"*/*",
+                                "authorization":"Bearer accresstoken",
+                                "content-Type":"multipart\from-data"
+                                }
+                              ) );
+                             }
  
- 
- //                             }
                               },
                              color: Colors.deepPurple,
                              textColor: Colors.white,

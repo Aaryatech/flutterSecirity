@@ -35,12 +35,15 @@ class _VisitorMasterState extends State<VisitorMaster> {
   void initState() {
     super.initState();
     addPurposeStore.setupValidations();
+    if(widget.isEdit)
+    {
     dropdownValue=widget.purpose ?? "";
     myController.text = widget.desc ?? "";
     myController1.text = widget.heading ?? "";
     myController2.text = widget.remark ?? "";
     myController3.text = widget.purpose ?? "";
   //  myController4.text = widget.isEdit ?? "";
+    }
   }
 
   @override
@@ -230,8 +233,54 @@ class _VisitorMasterState extends State<VisitorMaster> {
                               if (addPurposeStore.error.hasErrors) {
                                 print('data not valid');
                               } else {
-                                addPurposeStore.buttonClick();
+                                
+                                if(widget.isEdit)
+                                {
+                                  PurposeResponseModel purposeResponseModel =
+                                  new PurposeResponseModel(
+                                      widget.purposeId, purHeading, 1, purDesc, purRemark, "0", "NA", "NA", 1, 1, 0, 0, 0, dropdownValue, null, null);
+                              addPurposeStore.buttonClick(purposeResponseModel);
 
+            if(addPurposeStore.isAlert)
+                                {
+
+ Widget okButton = FlatButton(  
+    child: Text("OK"),  
+    onPressed: () {  
+      //Navigator.of(context).pop();  
+       Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>new PurposeUi()));
+    },  
+  );  
+  
+  // Create AlertDialog  
+  AlertDialog alert = AlertDialog(  
+    title: Text("AlertDialog"),  
+    content: Text("Successfully Edit Purpose"),  
+    actions: [  
+      okButton,  
+    ],  
+  );  
+  
+  // show the dialog  
+  showDialog(  
+    context: context,  
+    builder: (BuildContext context) {  
+      return alert;  
+    },  
+  );  
+
+
+                                }
+
+
+
+                                }else{
+                                  PurposeResponseModel purposeResponseModel =
+                                  new PurposeResponseModel(
+                                      0, purHeading, 1, purDesc, purRemark, "0", "NA", "NA", 1, 1, 0, 0, 0, dropdownValue, null, null);
+                              addPurposeStore.buttonClick(purposeResponseModel);
+                                  
                                 if(addPurposeStore.isAlert)
                                 {
 
@@ -262,6 +311,7 @@ class _VisitorMasterState extends State<VisitorMaster> {
   );  
 
 
+                                }
                                 }
                               
                           

@@ -54,6 +54,17 @@ mixin _$VisitorViewModel on _VisitorViewModel, Store {
   }
 
   @override
+  dynamic deleteVisitor(int visitorId) {
+    final _$actionInfo = _$_VisitorViewModelActionController.startAction(
+        name: '_VisitorViewModel.deleteVisitor');
+    try {
+      return super.deleteVisitor(visitorId);
+    } finally {
+      _$_VisitorViewModelActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 model: ${model},
