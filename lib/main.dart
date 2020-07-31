@@ -1,11 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:security/network/repository/authenticationRepo.dart';
 import 'package:security/ui/authUi.dart';
 import 'package:security/ui/purpose_master_ui.dart';
 import 'package:security/ui/purpose_ui.dart';
 import 'package:security/ui/visitor_master_add.dart';
 import 'package:security/ui/visitor_master_list.dart';
+import 'package:security/viewmodelstore/dashboardViewModel/dashboardViewModel.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,6 +15,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
+  
   @override
   Widget build(BuildContext context) {
 
@@ -50,8 +54,30 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
-  @override
+final DashboardViewModel dashboardViewModel = DashboardViewModel();
+class HomePage extends StatefulWidget {
+@override
+  _HomePageState createState() => _HomePageState();
+}
+
+  class _HomePageState extends State<HomePage> {
+
+ @override
+  void initState() {
+
+    var dt = DateTime.now();
+    var newFormat = DateFormat("yyyy-MM-dd");
+    String updatedDt = newFormat.format(dt);
+    print(updatedDt); // 20-04-03
+
+    dashboardViewModel.insertFromLocal(updatedDt,updatedDt,269);
+  
+    super.initState();
+  }
+
+  
+
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(

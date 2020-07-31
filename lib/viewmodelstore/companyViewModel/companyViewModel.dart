@@ -18,7 +18,7 @@ abstract class _CompanyViewModel with Store {
 
   _CompanyViewModel() {
     companyListRepo = CompanyListRepo();
-    //purposeDao = PurposeDao();
+    companyDao = CompanyDao();
   }
 
 

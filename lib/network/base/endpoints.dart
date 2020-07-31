@@ -6,6 +6,7 @@ class Users{
 
 class Auth{
   final authentication='master/login';
+  final dashboard='transaction/dashboardCount';
 }
 
 class Purpose{
