@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'dashboardCountModel.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+DashboardCountModel _$DashboardCountModelFromJson(Map<String, dynamic> json) {
+  return DashboardCountModel(
+    VisAndMaintGatepassModel.fromJson(
+        json['visAndMaintGatepassModel'] as Map<String, dynamic>),
+    EmpGateppassCountModel.fromJson(
+        json['empGateppassCountModel'] as Map<String, dynamic>),
+    SubGateppassCount.fromJson(
+        json['subGateppassCount'] as Map<String, dynamic>),
+    MatGatepassCountModel.fromJson(
+        json['matGatepassCountModel'] as Map<String, dynamic>),
+    MatGatepassEmpWiseModel.fromJson(
+        json['matGatepassEmpWiseModel'] as Map<String, dynamic>),
+  );
+}
+
+Map<String, dynamic> _$DashboardCountModelToJson(
+        DashboardCountModel instance) =>
+    <String, dynamic>{
+      'visAndMaintGatepassModel': instance.visAndMaintGatepassModel,
+      'empGateppassCountModel': instance.empGateppassCountModel,
+      'subGateppassCount': instance.subGateppassCount,
+      'matGatepassCountModel': instance.matGatepassCountModel,
+      'matGatepassEmpWiseModel': instance.matGatepassEmpWiseModel,
+    };

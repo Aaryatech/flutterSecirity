@@ -43,7 +43,20 @@ class _VisitorMasterState extends State<VisitorMaster> {
     myController2.text = widget.remark ?? "";
     myController3.text = widget.purpose ?? "";
   //  myController4.text = widget.isEdit ?? "";
+
+    addPurposeStore.setPurpose(widget.purpose);
+    addPurposeStore.setDesc(widget.desc);
+    addPurposeStore.setPurposeHeading(widget.heading);
+    addPurposeStore.setRemark(widget.remark);
+
+  
+    purDesc = widget.desc ?? "";
+    purHeading= widget.heading ?? "";
+    purRemark = widget.remark ?? "";
+    
+
     }
+  
   }
 
   @override
@@ -128,7 +141,7 @@ class _VisitorMasterState extends State<VisitorMaster> {
                           keyboardType: TextInputType.text,
                           controller: myController1,
                           onChanged: (value) {
-                            // purHeading=value;
+                             purHeading=value;
                             addPurposeStore.setPurposeHeading(value);
                           },
                           decoration: InputDecoration(
@@ -157,7 +170,7 @@ class _VisitorMasterState extends State<VisitorMaster> {
                           keyboardType: TextInputType.text,
                           controller: myController,
                           onChanged: (value) {
-                            // purDesc=value;
+                             purDesc=value;
                             addPurposeStore.setDesc(value);
                           },
                           decoration: InputDecoration(
@@ -184,7 +197,7 @@ class _VisitorMasterState extends State<VisitorMaster> {
                           controller: myController2,
                           //maxLength: 2,
                           onChanged: (value) {
-                            // purRemark=value;
+                             purRemark=value;
                             addPurposeStore.setRemark(value);
                           },
                           decoration: InputDecoration(

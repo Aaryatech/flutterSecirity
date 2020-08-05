@@ -17,6 +17,8 @@ class AuthUi extends StatefulWidget {
 
 class _AuthUiState extends State<AuthUi> {
 
+final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
  @override
   void initState() {
     super.initState();
@@ -33,6 +35,7 @@ class _AuthUiState extends State<AuthUi> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+       key: _scaffoldKey,
       child: Scaffold(
         appBar: AppBar(
           title: Text('Authentication'),
@@ -95,12 +98,21 @@ class _AuthUiState extends State<AuthUi> {
                               if (authViewModelStore.error.hasErrors) {
                                 print('data not valid');
                               } else {
-                      authViewModelStore.authUser(authViewModelStore.dscNumber);
-                    
-                    if(authViewModelStore.isAlert){
+                                
+                      authViewModelStore.authUser(authViewModelStore.dscNumber).then((response){
+                        if(response.status==404)
+                        {
+                            showSnackBar("User Not Found",false);
+                        }else{
+                            showSnackBar("Success",true);
+                              if(authViewModelStore.isAlert){
                       Navigator.of(context).pop();
                       Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>new MyApp()));
                       } 
+                        }
+                      });
+                    
+                  
                               }
                   },
                     child: Text('Submit', style: TextStyle(fontSize: 20.0, height: 2.0,color: Colors.white ), textAlign: TextAlign.center,),
@@ -119,5 +131,15 @@ class _AuthUiState extends State<AuthUi> {
         ),
       ),
     );
+  }
+
+  void showSnackBar(String text,bool isSuccess)
+  {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+        content: Text(text),
+        duration: Duration(seconds: 3),
+        backgroundColor: isSuccess ? Colors.deepPurple : Colors.red,
+
+    ));
   }
 }

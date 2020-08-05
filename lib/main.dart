@@ -7,7 +7,10 @@ import 'package:security/ui/purpose_master_ui.dart';
 import 'package:security/ui/purpose_ui.dart';
 import 'package:security/ui/visitor_master_add.dart';
 import 'package:security/ui/visitor_master_list.dart';
+import 'package:security/viewmodelstore/authviewmodel/authViewModel.dart';
 import 'package:security/viewmodelstore/dashboardViewModel/dashboardViewModel.dart';
+
+import 'common/models/auth/authResponseModel.dart';
 
 void main() {
   runApp(MyApp());
@@ -55,6 +58,7 @@ class MyApp extends StatelessWidget {
 }
 
 final DashboardViewModel dashboardViewModel = DashboardViewModel();
+AuthViewModel authViewModelStore = AuthViewModel();
 class HomePage extends StatefulWidget {
 @override
   _HomePageState createState() => _HomePageState();
@@ -64,6 +68,7 @@ class HomePage extends StatefulWidget {
 
  @override
   void initState() {
+AuthResponseModel authList;
 
     var dt = DateTime.now();
     var newFormat = DateFormat("yyyy-MM-dd");
@@ -71,7 +76,7 @@ class HomePage extends StatefulWidget {
     print(updatedDt); // 20-04-03
 
     dashboardViewModel.insertFromLocal(updatedDt,updatedDt,269);
-  
+   authList= authViewModelStore.fetchFromLocal();
     super.initState();
   }
 
@@ -86,8 +91,8 @@ class HomePage extends StatefulWidget {
       ),
       drawer: new Drawer(
         child: new ListView(children: <Widget>[
-          new UserAccountsDrawerHeader(accountName: new Text("Monika Kawale"),
-           accountEmail: new Text("monikakawale26@gmail.com"),
+          new UserAccountsDrawerHeader(accountName: new Text('${authViewModelStore.model!=null? authViewModelStore.model.empFname:'Monika kawale'}}'),
+           accountEmail: new Text('${authViewModelStore.model!=null? authViewModelStore.model.empEmail:'monikakawale26@gmail.com'}}'),
            currentAccountPicture: new CircleAvatar(
              backgroundColor: Theme.of(context).platform == TargetPlatform.iOS ? Colors.deepPurple : Colors.white,
              child: new Text("M"),
@@ -190,7 +195,8 @@ new ListTile(
                             children: <Widget>[
                               Text('Total Visitors',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                             // Text('${dashboardViewModel.model.visAndMaintGatepassModel.visitor_total}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -216,7 +222,8 @@ new Padding(
                               Text('Currently Visitors in Company',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,),
               textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                           //   Text('${dashboardViewModel.model.visAndMaintGatepassModel.visitor_in_comp}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -250,7 +257,8 @@ new Padding(
                             children: <Widget>[
                               Text('Visitors Metting Completed',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                           //   Text('${dashboardViewModel.model.visAndMaintGatepassModel.emp_visitor_completed}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -275,7 +283,8 @@ new Padding(
                             children: <Widget>[
                               Text('Visitors Rejected',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                             // Text('${dashboardViewModel.model.visAndMaintGatepassModel.visitor_rejected}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -310,7 +319,8 @@ new Padding(
                             children: <Widget>[
                               Text('Visitors Standing at Gate',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                             // Text('${dashboardViewModel.model.visAndMaintGatepassModel.visitor_pending}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -335,7 +345,8 @@ new Padding(
                             children: <Widget>[
                               Text('Current Metting Going on(Approve)',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                             // Text('${dashboardViewModel.model.visAndMaintGatepassModel.visitor_approved}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -390,7 +401,8 @@ new Padding(
                             children: <Widget>[
                               Text('Employee Total Visitor',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            //  Text('${dashboardViewModel.model.visAndMaintGatepassModel.emp_visitor_total}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -415,7 +427,8 @@ new Padding(
                             children: <Widget>[
                               Text('Current Employee Metting Going on(Approve)',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                             // Text('${dashboardViewModel.model.visAndMaintGatepassModel.emp_visitor_approved}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -449,7 +462,8 @@ new Padding(
                             children: <Widget>[
                               Text('Employee Wise Rejected',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                             // Text('${dashboardViewModel.model.visAndMaintGatepassModel.emp_visitor_rejected}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -474,7 +488,8 @@ new Padding(
                             children: <Widget>[
                               Text('Employee Wise Visitor Standing at Gate',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                             // Text('${dashboardViewModel.model.visAndMaintGatepassModel.emp_visitor_pending}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -508,7 +523,8 @@ new Padding(
                             children: <Widget>[
                               Text('Employee Wise Meeting Completed',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                             // Text('${dashboardViewModel.model.visAndMaintGatepassModel.emp_visitor_completed}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -561,7 +577,8 @@ new Padding(
                             children: <Widget>[
                               Text('Maintenance Visitor Pending',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                             // Text('${dashboardViewModel.model.visAndMaintGatepassModel.maint_pending}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -586,7 +603,8 @@ new Padding(
                             children: <Widget>[
                               Text('Maintenance visitors Approve',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                             // Text('${dashboardViewModel.model.visAndMaintGatepassModel.maint_pending}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -620,7 +638,8 @@ new Padding(
                             children: <Widget>[
                               Text('Maintenance visitors Rejected',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                             // Text('${dashboardViewModel.model.visAndMaintGatepassModel.maint_rejected}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -645,7 +664,8 @@ new Padding(
                             children: <Widget>[
                               Text('Maintenance visitors Work Completed',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            //  Text('${dashboardViewModel.model.visAndMaintGatepassModel.maint_completed}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -676,7 +696,8 @@ new Padding(
                             children: <Widget>[
                               Text('Maintenance visitors Total',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                            //  Text('${dashboardViewModel.model.visAndMaintGatepassModel.maint_total}',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                               Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -728,7 +749,7 @@ Column(
                             children: <Widget>[
                               Text('Total Temp GP',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                              Text('ff',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -753,7 +774,7 @@ new Padding(
                             children: <Widget>[
                               Text('Total Day GP',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                              Text('ff',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),
@@ -787,7 +808,7 @@ new Padding(
                             children: <Widget>[
                               Text('No Of Employee Outside Factory',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16,), textAlign: TextAlign.center,),
                               
-                              Text('0',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
+                              Text('ff',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20,), textAlign: TextAlign.center,)
                             ],
                           ),
                         ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:security/common/models/auth/visitorResponseModel.dart';
+import 'package:security/ui/visitor_master_add.dart';
+import 'package:security/viewmodelstore/visitorViewModel/addVisitorViewModel.dart';
 import 'package:security/viewmodelstore/visitorViewModel/visitorViewModel.dart';
 
 VisitorViewModel visitorViewModelStore = VisitorViewModel();
@@ -114,22 +116,21 @@ child: new Column(
 //}
 
                               } else if (result == "1") {
-                               // Navigator.of(context).pop();
-                                // Navigator.of(context).push(MaterialPageRoute(
-                                //     builder: (BuildContext context) =>
-                                //         new VisitorMaster(
-                                //           purposeId: purposeViewModelStore
-                                //               .model[index].purposeId,
-                                //           desc: purposeViewModelStore
-                                //               .model[index].description,
-                                //           heading: purposeViewModelStore
-                                //               .model[index].purposeHeading,
-                                //           remark: purposeViewModelStore
-                                //               .model[index].remark,
-                                //           purpose: purposeViewModelStore
-                                //               .model[index].exVar1,
-                                //               isEdit:true
-                                //         )));
+                               Navigator.of(context).pop();
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        new VisitorMasterUi(
+                                          visitorModel: visitorViewModelStore .model[index],
+                                          // desc: purposeViewModelStore
+                                          //     .model[index].description,
+                                          // heading: purposeViewModelStore
+                                          //     .model[index].purposeHeading,
+                                          // remark: purposeViewModelStore
+                                          //     .model[index].remark,
+                                          // purpose: purposeViewModelStore
+                                          //     .model[index].exVar1,
+                                              isEdit:true
+                                        )));
                               }
                             },
                             itemBuilder: (BuildContext context) =>

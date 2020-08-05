@@ -135,6 +135,9 @@ factory AuthResponseModel.fromJson(Map<String, dynamic> json) => _$AuthResponseM
   
   Map<String, dynamic> toJson() => _$AuthResponseModelToJson(this);
 
+
+  
+
  static String create(){
     return "CREATE TABLE $tableName (" +
       "$columnId INTEGER PRIMARY KEY ," +

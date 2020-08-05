@@ -1,5 +1,7 @@
 import 'package:mobx/mobx.dart';
+import 'package:security/common/models/auth/dashboard/dashboardCountModel.dart';
 import 'package:security/common/models/companyResponseModel.dart';
+import 'package:security/local/dao/companydao.dart';
 
 import 'package:security/network/repository/dashboardRepo.dart';
 
@@ -18,8 +20,8 @@ abstract class _DashboardViewModel with Store {
   }
 
 
-  // @observable
-  // List<CompanyResponseModel> model;
+  @observable
+  DashboardCountModel model;
 
 
   @observable
@@ -30,6 +32,7 @@ abstract class _DashboardViewModel with Store {
     isLoading = true;
     dashboardRepo.dashboard(fromDate,toDate,empId).then((response) {
       isLoading = false;
+      model = response.data;
     //  companyDao.insertCompany(response.data).then((value) {
    //     fetchFromLocal();
      // });

@@ -7,6 +7,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:security/common/models/auth/visitorResponseModel.dart';
 import 'package:security/common/models/companyResponseModel.dart';
 import 'package:security/viewmodelstore/companyViewModel/companyViewModel.dart';
 import 'package:security/viewmodelstore/visitorViewModel/addVisitorViewModel.dart';
@@ -14,6 +15,11 @@ import 'package:security/viewmodelstore/visitorViewModel/addVisitorViewModel.dar
 CompanyViewModel companyViewModel = CompanyViewModel();
 final AddVisitorStore addVisitorStore = AddVisitorStore();
 class VisitorMasterUi  extends StatefulWidget {
+
+ VisitorMasterUi({this.visitorModel,this.isEdit});
+  final VisitorResponseModel visitorModel;
+  final bool isEdit;
+
   @override
   _VisitorMasterUiState createState() => _VisitorMasterUiState();
 }
@@ -37,6 +43,7 @@ class _VisitorMasterUiState extends State<VisitorMasterUi > {
     "Employee Purpose"
   ];
 
+   
  List<CompanyResponseModel> _company = [];
  Future<File> file;
   File tempFile;
@@ -49,9 +56,49 @@ class _VisitorMasterUiState extends State<VisitorMasterUi > {
      companyViewModel.insertFromLocal();
     _company=companyViewModel.model;
     addVisitorStore.setupValidations();
+
+     if(widget.isEdit)
+    {
+
+    dropdownValue=widget.visitorModel.personCompany ?? "";
+    dropdownValue=widget.visitorModel.personCompany ?? "";
+    dropdownValue=widget.visitorModel.personCompany ?? "";
+    myController.text = widget.visitorModel.personName ?? "";
+    myController1.text = widget.visitorModel.mobileNo  ?? "";
+    myController2.text = widget.visitorModel.noOfPerson  ?? "";
+    myController3.text = widget.visitorModel.purposeRemark  ?? "";
+  
+
+    addVisitorStore.setPurpose(widget.visitorModel.purposeRemark);
+    //addVisitorStore.setNoOfPerson(widget.visitorModel.noOfPerson);
+    addVisitorStore.setPersonToMeet(widget.visitorModel.personToMeet);
+    addVisitorStore.setMob(widget.visitorModel.mobileNo);
+    addVisitorStore.setCompany(widget.visitorModel.personCompany);
+    addVisitorStore.setVisitorName(widget.visitorModel.personName);
+    addVisitorStore.setRemark(widget.visitorModel.purposeRemark);
+
+  
+    // purDesc = widget.desc ?? "";
+    // purHeading= widget.heading ?? "";
+    // purRemark = widget.remark ?? "";
+    
+
+    }
+  
      
      super.initState();
    }
+
+   @override
+  void dispose() {
+    addVisitorStore.dispose();
+    super.dispose();
+  }
+
+  final myController = TextEditingController();
+  final myController1 = TextEditingController();
+  final myController2 = TextEditingController();
+  final myController3 = TextEditingController();
  
 
  chooseImage(){
@@ -127,7 +174,7 @@ class _VisitorMasterUiState extends State<VisitorMasterUi > {
                          padding: const EdgeInsets.all(8.0),
                          child: TextField(
                            keyboardType: TextInputType.text,
-                           //controller: myController1,
+                           controller: myController,
                            onChanged: (value) {
                            
                             // addPurposeStore.setPurposeHeading(value);
@@ -236,7 +283,7 @@ class _VisitorMasterUiState extends State<VisitorMasterUi > {
                          child: TextField(
                            keyboardType: TextInputType.number,
                            maxLength: 10,
-                           //controller: myController,
+                           controller: myController1,
                            onChanged: (value) {
                            //  addPurposeStore.setDesc(value);
                            },
@@ -263,7 +310,7 @@ class _VisitorMasterUiState extends State<VisitorMasterUi > {
                          child: TextField(
                            keyboardType: TextInputType.number,
                            maxLength: 2,
-                          // controller: myController2,
+                          controller: myController2,
                            onChanged: (value) {
                           //   addPurposeStore.setRemark(value);
                            },
@@ -288,7 +335,7 @@ class _VisitorMasterUiState extends State<VisitorMasterUi > {
                          padding: const EdgeInsets.all(8.0),
                          child: TextField(
                            keyboardType: TextInputType.text,
-                          // controller: myController2,
+                           controller: myController3,
                            onChanged: (value) {
                           //   addPurposeStore.setRemark(value);
                            },
@@ -552,9 +599,9 @@ Padding(
                              onPressed: ()async {
                                
                               addVisitorStore.validateAll();
-                             if (addVisitorStore.error.hasErrors) {
-                               print('data not valid');
-                             } else {
+                            //  if (addVisitorStore.error.hasErrors) {
+                            //    print('data not valid');
+                            //  } else {
 
                               String fileName = tempFile.path.split("/").last;
                               FormData formData=new FormData.fromMap({
@@ -570,7 +617,8 @@ Padding(
                                 "content-Type":"multipart\from-data"
                                 }
                               ) );
-                             }
+                              print(response);
+                            // }
  
                               },
                              color: Colors.deepPurple,

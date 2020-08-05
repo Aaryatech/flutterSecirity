@@ -2,6 +2,7 @@
 
 import 'package:dio/dio.dart';
 import 'package:security/common/models/auth/authResponseModel.dart';
+import 'package:security/common/models/auth/dashboard/dashboardCountModel.dart';
 import 'package:security/network/base/endpoints.dart' as endPoints;
 import 'package:security/network/client/networkclient.dart';
 import 'package:security/network/model/httpresponce.dart';
@@ -28,7 +29,7 @@ FormData formData = new FormData.fromMap({
      if(responce.statusCode==200){
        httpResponse.status=responce.statusCode;
        httpResponse.message='Successful';
-       httpResponse.data=AuthResponseModel.fromJson(responce.data);
+       httpResponse.data=DashboardCountModel.fromJson(responce.data);
      
      }else{
        httpResponse.status= 500;

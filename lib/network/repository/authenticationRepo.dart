@@ -37,9 +37,17 @@ FormData formData = new FormData.fromMap({
    
 
    }).catchError((onError){
+      print(onError);
+    if(httpResponse.status == 400)
+    {
        httpResponse.status= 400;
        httpResponse.message='Network not available';
        httpResponse.data=null;
+    }else{
+       httpResponse.status= 404;
+       httpResponse.message='User Not Found';
+       httpResponse.data=null;
+    }
      
    }); 
 
