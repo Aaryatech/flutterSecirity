@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
 }
 
 final DashboardViewModel dashboardViewModel = DashboardViewModel();
-AuthViewModel authViewModelStore = AuthViewModel();
+//AuthViewModel authViewModelStore = AuthViewModel();
 class HomePage extends StatefulWidget {
 @override
   _HomePageState createState() => _HomePageState();
@@ -76,7 +76,7 @@ AuthResponseModel authList;
     print(updatedDt); // 20-04-03
 
     dashboardViewModel.insertFromLocal(updatedDt,updatedDt,269);
-   authList= authViewModelStore.fetchFromLocal();
+   //authList= authViewModelStore.fetchFromLocal();
     super.initState();
   }
 
@@ -91,8 +91,8 @@ AuthResponseModel authList;
       ),
       drawer: new Drawer(
         child: new ListView(children: <Widget>[
-          new UserAccountsDrawerHeader(accountName: new Text('${authViewModelStore.model!=null? authViewModelStore.model.empFname:'Monika kawale'}}'),
-           accountEmail: new Text('${authViewModelStore.model!=null? authViewModelStore.model.empEmail:'monikakawale26@gmail.com'}}'),
+          new UserAccountsDrawerHeader(accountName: new Text('Monika kawale'),
+           accountEmail: new Text('monikakawale26@gmail.com'),
            currentAccountPicture: new CircleAvatar(
              backgroundColor: Theme.of(context).platform == TargetPlatform.iOS ? Colors.deepPurple : Colors.white,
              child: new Text("M"),

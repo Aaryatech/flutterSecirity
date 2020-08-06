@@ -9,6 +9,21 @@ part of 'dashboardViewModel.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$DashboardViewModel on _DashboardViewModel, Store {
+  final _$modelAtom = Atom(name: '_DashboardViewModel.model');
+
+  @override
+  DashboardCountModel get model {
+    _$modelAtom.reportRead();
+    return super.model;
+  }
+
+  @override
+  set model(DashboardCountModel value) {
+    _$modelAtom.reportWrite(value, super.model, () {
+      super.model = value;
+    });
+  }
+
   final _$isLoadingAtom = Atom(name: '_DashboardViewModel.isLoading');
 
   @override
@@ -52,6 +67,7 @@ mixin _$DashboardViewModel on _DashboardViewModel, Store {
   @override
   String toString() {
     return '''
+model: ${model},
 isLoading: ${isLoading}
     ''';
   }

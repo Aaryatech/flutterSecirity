@@ -6,7 +6,7 @@ VisAndMaintGatepassModel _$VisAndMaintGatepassModelFromJson(
     Map<String, dynamic> json) {
   return VisAndMaintGatepassModel(
     json['id'] as String,
-    json['visitor_pending'] as String,
+    json['visitor_pending'] as int,
     json['visitor_approved'] as int,
     json['visitor_rejected'] as int,
     json['visitor_completed'] as int,

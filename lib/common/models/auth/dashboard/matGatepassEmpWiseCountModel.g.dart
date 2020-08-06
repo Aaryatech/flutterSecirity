@@ -10,7 +10,7 @@ MatGatepassEmpWiseModel _$MatGatepassEmpWiseModelFromJson(
     Map<String, dynamic> json) {
   return MatGatepassEmpWiseModel(
     json['id'] as String,
-    json['empPendingCount'] as String,
+    json['empPendingCount'] as int,
     json['empApprovedCount'] as int,
     json['empRejectedCount'] as int,
   );

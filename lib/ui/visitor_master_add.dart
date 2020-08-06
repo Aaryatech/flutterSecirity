@@ -53,29 +53,29 @@ class _VisitorMasterUiState extends State<VisitorMasterUi > {
  
    void initState() {
  
-     companyViewModel.insertFromLocal();
-    _company=companyViewModel.model;
+   // companyViewModel.insertFromLocal();
+   // _company=companyViewModel.model;
     addVisitorStore.setupValidations();
 
-     if(widget.isEdit)
-    {
+    //  if(widget.isEdit)
+    // {
 
-    dropdownValue=widget.visitorModel.personCompany ?? "";
-    dropdownValue=widget.visitorModel.personCompany ?? "";
-    dropdownValue=widget.visitorModel.personCompany ?? "";
-    myController.text = widget.visitorModel.personName ?? "";
-    myController1.text = widget.visitorModel.mobileNo  ?? "";
-    myController2.text = widget.visitorModel.noOfPerson  ?? "";
-    myController3.text = widget.visitorModel.purposeRemark  ?? "";
+    // dropdownValue=widget.visitorModel.personCompany ?? "";
+    // dropdownValue=widget.visitorModel.personCompany ?? "";
+    // dropdownValue=widget.visitorModel.personCompany ?? "";
+    // myController.text = widget.visitorModel.personName ?? "";
+    // myController1.text = widget.visitorModel.mobileNo  ?? "";
+    // myController2.text = widget.visitorModel.noOfPerson  ?? "";
+    // myController3.text = widget.visitorModel.purposeRemark  ?? "";
   
 
-    addVisitorStore.setPurpose(widget.visitorModel.purposeRemark);
-    //addVisitorStore.setNoOfPerson(widget.visitorModel.noOfPerson);
-    addVisitorStore.setPersonToMeet(widget.visitorModel.personToMeet);
-    addVisitorStore.setMob(widget.visitorModel.mobileNo);
-    addVisitorStore.setCompany(widget.visitorModel.personCompany);
-    addVisitorStore.setVisitorName(widget.visitorModel.personName);
-    addVisitorStore.setRemark(widget.visitorModel.purposeRemark);
+    // addVisitorStore.setPurpose(widget.visitorModel.purposeRemark);
+    // //addVisitorStore.setNoOfPerson(widget.visitorModel.noOfPerson);
+    // addVisitorStore.setPersonToMeet(widget.visitorModel.personToMeet);
+    // addVisitorStore.setMob(widget.visitorModel.mobileNo);
+    // addVisitorStore.setCompany(widget.visitorModel.personCompany);
+    // addVisitorStore.setVisitorName(widget.visitorModel.personName);
+    // addVisitorStore.setRemark(widget.visitorModel.purposeRemark);
 
   
     // purDesc = widget.desc ?? "";
@@ -83,9 +83,8 @@ class _VisitorMasterUiState extends State<VisitorMasterUi > {
     // purRemark = widget.remark ?? "";
     
 
-    }
-  
-     
+    //}
+
      super.initState();
    }
 
@@ -605,17 +604,19 @@ Padding(
 
                               String fileName = tempFile.path.split("/").last;
                               FormData formData=new FormData.fromMap({
-                                "image" :
+                                "MultipartBody.Part[]" :
                                 await MultipartFile.fromFile(tempFile.path,filename: fileName,contentType: new MediaType('image','png')),
-                                "type":"image/png"
+                                "imageName":"abc",
+                                "type":"1"
+                               
 
                               });
                               Response response=await dio.post("http://107.180.95.11:8080/SecurityAppApiDemo/photoUpload",data:formData,options: Options(
-                                headers:{ 
-                                "accept":"*/*",
-                                "authorization":"Bearer accresstoken",
-                                "content-Type":"multipart\from-data"
-                                }
+                                // headers:{ 
+                                // "accept":"*/*",
+                                // "authorization":"Bearer accresstoken",
+                                // "content-Type":"multipart\from-data"
+                                // }
                               ) );
                               print(response);
                             // }

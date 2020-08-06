@@ -13,7 +13,7 @@ _getDbInstance();
 void _getDbInstance() async => _database = await DbConfig.getInstance();
 
 
-Future<int> insertAuthDetails(AuthResponseModel model)async{
+Future<int> insertAuthDetails(AuthResponseModel model) async{
  int result = await _database.insert(AuthResponseModel.tableName,model.toJson(),conflictAlgorithm: ConflictAlgorithm.replace);
  return result;
 }

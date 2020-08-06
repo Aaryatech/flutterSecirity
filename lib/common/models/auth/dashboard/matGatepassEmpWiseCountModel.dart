@@ -18,7 +18,7 @@ class MatGatepassEmpWiseModel{
 @JsonSerializable(nullable : false)
 final String id;
 
-final String empPendingCount;
+final int empPendingCount;
 // final String empCode;
 final int empApprovedCount;
 final int empRejectedCount;

@@ -30,7 +30,7 @@ class VisAndMaintGatepassModel{
 @JsonSerializable(nullable : false)
 final String id;
 
-final String visitor_pending;
+final int visitor_pending;
 // final String empCode;
 final int visitor_approved;
 final int visitor_rejected;

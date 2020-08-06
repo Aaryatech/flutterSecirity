@@ -12,7 +12,7 @@ class AuthResponseModel{
   static final String columnId = 'empId';
   static final String columnTitle = 'empDsc';
   static final String columnCompanyId = 'companyId';
-  static final String columnEmpCatId= 'empCatId';
+  static final String columnEmpCatId = 'empCatId';
   static final String columnEmpTypeId = 'empTypeId';
   static final String columnEmpDeptId = 'empDeptId';
   static final String columnLocId = 'locId';
@@ -37,10 +37,10 @@ class AuthResponseModel{
   static final String columnEmpLeavingDate = 'empLeavingDate';
   static final String columnEmpLeavingReason = 'empLeavingReason';
   static final String columnLockPeriod = 'lockPeriod';
-  static final String columnTermConditions= 'termConditions';
+  static final String columnTermConditions = 'termConditions';
   static final String columnSalaryId = 'salaryId';
   static final String columnDelStatus = 'delStatus';
-  static final String columnIsActive= 'isActive';
+  static final String columnIsActive = 'isActive';
   static final String columnMakerUserId = 'makerUserId';
   static final String columnMakerEnterDatetime = 'makerEnterDatetime';
   static final String columnExInt1 = 'exInt1';
@@ -92,10 +92,10 @@ final String empEmergencyPerson1;
 final String empEmergencyNo1;
 final String empEmergencyPerson2;
 final String empEmergencyNo2;
-final int empRatePerhr;
+final double empRatePerhr;
 final String empJoiningDate;
-final int empPrevExpYrs;
-final int empPrevExpMonths;
+final double empPrevExpYrs;
+final double empPrevExpMonths;
 final String empLeavingDate;
 final String empLeavingReason;
 final String lockPeriod;
@@ -114,9 +114,9 @@ final String exVar1;
 final String exVar2;
 final String exVar3;
 
-final int grossSalary;
-final int noOfHrs;
-final int gender;
+final double grossSalary;
+final double noOfHrs;
+final String gender;
 final String dob;
 final String scanCopy1;
 final String scanCopy2;
@@ -136,13 +136,11 @@ factory AuthResponseModel.fromJson(Map<String, dynamic> json) => _$AuthResponseM
   Map<String, dynamic> toJson() => _$AuthResponseModelToJson(this);
 
 
-  
-
  static String create(){
     return "CREATE TABLE $tableName (" +
       "$columnId INTEGER PRIMARY KEY ," +
       "$columnTitle TEXT," +
-      "$columnCompanyId INTEGER" +
+      "$columnCompanyId INTEGER," +
       "$columnEmpCatId INTEGER," +
       "$columnEmpTypeId INTEGER," +
       "$columnEmpDeptId INTEGER," +

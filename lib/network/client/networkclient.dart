@@ -13,8 +13,8 @@ HttpClient(){
    
   BaseOptions options = new BaseOptions(
     baseUrl: BaseUrl.baseUrl,
-    connectTimeout: 5000,
-    receiveTimeout: 3000,
+    connectTimeout: 15000,
+    receiveTimeout: 15000,
     headers: headers,
 );
  client=Dio(options);
